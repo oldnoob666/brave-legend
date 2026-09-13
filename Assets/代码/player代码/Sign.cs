@@ -15,17 +15,18 @@ public class Sign : MonoBehaviour
     private void Awake()
     {
         anim = signSprite.GetComponent<Animator>();
-        playerInput = new PlayerInputControl();
+        playerInput = new PlayerInputControl();//new一个playerInput出来，当需要玩家执行操作的时候，就写这个
     }
 
     private void OnEnable()
     {
-        playerInput.Enable();
-        playerInput.GamePlayer.Confirm.started += OnConfirm;
+        playerInput.Enable();//启动输入
+        playerInput.GamePlayer.Confirm.started += OnConfirm;//监听确认按键事件
     }
 
     private void OnDisable()
     {
+        canPress = false;
         playerInput.GamePlayer.Confirm.started -= OnConfirm;
         playerInput.Disable();
     }

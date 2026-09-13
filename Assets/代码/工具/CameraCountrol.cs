@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class CameraCountrol : MonoBehaviour
 {
+    [Header("ÊÂ¼þ¼àÌý")]
+    public VoidEventSO afterLoadedSceneEvent;
+
     private CinemachineConfiner2D confiner2D;
     public CinemachineImpulseSource impuseSource;
     public VoidEventSO caremaShakeEvent;
@@ -17,6 +20,7 @@ public class CameraCountrol : MonoBehaviour
 
     private void OnEnable()
     {
+        afterLoadedSceneEvent.OnEventRised += OnAfterSceneLoadedEvent;
         caremaShakeEvent.OnEventRised += OnCameraShakeEvent;
 
     }
@@ -25,7 +29,13 @@ public class CameraCountrol : MonoBehaviour
 
     private void OnDisable()
     {
+        afterLoadedSceneEvent.OnEventRised -= OnAfterSceneLoadedEvent;
         caremaShakeEvent.OnEventRised -= OnCameraShakeEvent;
+    }
+
+    private void OnAfterSceneLoadedEvent()
+    {
+        GetNewCameraBounds(); 
     }
 
     private void OnCameraShakeEvent()
@@ -34,10 +44,10 @@ public class CameraCountrol : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        GetNewCameraBounds();
-    }
+    //private void Start()
+    //{
+    //    GetNewCameraBounds();
+    //}
     private void  GetNewCameraBounds()
     {
         var obj = GameObject.FindGameObjectWithTag("bounds");
