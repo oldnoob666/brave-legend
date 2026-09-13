@@ -1,0 +1,49 @@
+# Unity-generated caches and local editor state
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Build output
+/[Bb]uild/
+/[Bb]uilds/
+
+# IDE-generated files
+/.vs/
+/.idea/
+/*.csproj
+/*.sln
+/*.slnx
+/*.suo
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.unityproj
+/*.sln.docstates
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Logs, crash reports and OS files
+*.log
+/sysinfo.txt
+/crashlytics-build.properties
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Unity-generated asset folders
+/Assets/AssetStoreTools*
+/Assets/AddressableAssetsData/*/*.bin*
+/Assets/StreamingAssets/aa.meta
+/Assets/StreamingAssets/aa/

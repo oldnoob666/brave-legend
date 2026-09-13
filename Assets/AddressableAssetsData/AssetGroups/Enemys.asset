@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Enemys
+  m_EditorClassIdentifier: 
+  m_GroupName: Enemys
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e11d9f98fdb6d344bb9131300c42bdd5
+  m_SerializeEntries:
+  - m_GUID: 5257f42cbb6f8a34599e051dc8124b4e
+    m_Address: Enemy_boar
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8bc3157b0ac737a409bb86dd6f1081ed, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a5ea986c34bd7b743b569a894fc07fae, type: 2}
+    - {fileID: 11400000, guid: 93feba5c63806ff43b1ea72b14239e88, type: 2}

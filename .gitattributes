@@ -1,0 +1,36 @@
+# Keep text consistent in Git and let Windows use native working-tree endings.
+* text=auto
+
+# Unity serialized assets are text; keep their diffs readable.
+*.cs text diff=csharp
+*.shader text
+*.compute text
+*.cginc text
+*.unity text
+*.prefab text
+*.asset text
+*.meta text
+*.mat text
+*.anim text
+*.controller text
+*.asmdef text
+*.asmref text
+*.json text
+*.md text
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.psd binary
+*.fbx binary
+*.ttf binary
+*.otf binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.mp4 binary
+*.pdf binary
+*.unitypackage binary
+*.zip binary
