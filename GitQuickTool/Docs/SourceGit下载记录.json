@@ -1,0 +1,18 @@
+{
+  "BinaryUrl": "https://github.com/sourcegit-scm/sourcegit/releases/download/v2026.19/sourcegit_2026.19.win-x64.zip",
+  "BinarySHA256": "66e12ca936a286136e05a80caaed97c177096ebfe714cf613dc6dac7fcb7f43f",
+  "License": "MIT",
+  "SourceFormat": "GitHub source archive plus pinned submodule archive (not full git history)",
+  "SourceUrl": "https://codeload.github.com/sourcegit-scm/sourcegit/zip/refs/tags/v2026.19",
+  "PublisherDigestMatched": true,
+  "Release": "https://github.com/sourcegit-scm/sourcegit/releases/tag/v2026.19",
+  "SourceArchiveSHA256": "eb0439024be16ac275d3af5c982d83238d7a7a15a00027f78b846669dfa707fd",
+  "Version": "v2026.19",
+  "Submodule": {
+    "Repository": "https://github.com/love-linger/AvaloniaEdit",
+    "Commit": "11bf2b6a8265329974606604ecc96ece8bfbc0b9",
+    "ArchiveSHA256": "d8752b1034c90722ed5ed4111a2e76c22bb18c982ff7fe67c11545353593c6d5"
+  },
+  "CheckedAt": "2026-09-13",
+  "Repository": "https://github.com/sourcegit-scm/sourcegit"
+}
