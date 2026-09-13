@@ -1448,8 +1448,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc78b4f51fa9d84a950c67e951dc46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTrans: {fileID: 262147952}
   firstLoadScene: {fileID: 11400000, guid: d88f43a7852feae44b6dec34d0542810, type: 2}
   loadEventSO: {fileID: 11400000, guid: c4cbe144910c3dd41abc2822f19bf703, type: 2}
+  fadeDuration: 0
 --- !u!4 &825645526
 Transform:
   m_ObjectHideFlags: 0

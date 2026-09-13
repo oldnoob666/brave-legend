@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CameraCountrol : MonoBehaviour
 {
@@ -46,28 +45,5 @@ public class CameraCountrol : MonoBehaviour
             return;
         confiner2D.m_BoundingShape2D = obj.GetComponent<Collider2D>();
         confiner2D.InvalidateCache();
-    }
-
-    public void RefreshForScene(Scene scene)
-    {
-        confiner2D.m_BoundingShape2D = null;
-        foreach (var root in scene.GetRootGameObjects())
-        {
-            foreach (var bounds in root.GetComponentsInChildren<Collider2D>())
-            {
-                if (bounds.CompareTag("bounds"))
-                {
-                    confiner2D.m_BoundingShape2D = bounds;
-                    break;
-                }
-            }
-            if (confiner2D.m_BoundingShape2D != null)
-                break;
-        }
-        confiner2D.InvalidateCache();
-        // A teleport must not damp the camera across the old scene's position.
-        var virtualCamera = GetComponent<CinemachineVirtualCamera>();
-        if (virtualCamera != null)
-            virtualCamera.PreviousStateIsValid = false;
     }
 }
