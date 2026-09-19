@@ -17,6 +17,7 @@ public class SceneLoader : MonoBehaviour
 
     [Header("广播")]
     public VoidEventSO afterSceneLoadEvent;
+    public FadeEventSO fadeEventSO;
 
     private GameSceneSO currentLoadedScene;//当前场景的内容
     private GameSceneSO sceneToLoad;//要加载的场景的内容
@@ -33,7 +34,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnEnable()
     {
-        loadEventSO.LoadRequestEvent += OnLoadRequestEvent;
+        loadEventSO.LoadRequestEvent += OnLoadRequestEvent;//在这里订阅SceneLoadEventSO的事件，当事件触发时调用OnLoadRequestEvent方法
     }
 
 
@@ -59,11 +60,11 @@ public class SceneLoader : MonoBehaviour
 
         if(currentLoadedScene != null )
         {
-            StartCoroutine(UnLoadPreviousScene());
+            StartCoroutine(UnLoadPreviousScene());//如果当前加载的场景不为空，就先卸载旧场景，再加载新场景
         }
         else
         {
-            LoadNewScene();
+            LoadNewScene();//如果当前加载的场景为空，就直接加载新场景
         }
 
 
@@ -72,23 +73,23 @@ public class SceneLoader : MonoBehaviour
 
     private void NewGame()
     {
-        sceneToLoad = firstLoadScene;
-        OnLoadRequestEvent(sceneToLoad, firstplayerTrans, true);
+        sceneToLoad = firstLoadScene;//把第一个场景赋值给sceneToLoad
+        OnLoadRequestEvent(sceneToLoad, firstplayerTrans, true);//游戏开始时加载第一个场景，并把玩家位置设置为firstplayerTrans
     }
 
 
 
 
-    private IEnumerator UnLoadPreviousScene()
+    private IEnumerator UnLoadPreviousScene()//协程方法，卸载旧场景,在OnLoadRequestEvent方法里被调用
     {
-        if(fadeScreen)
+        if(fadeScreen)//卸载场景时的变黑效果
         {
-
+            fadeEventSO.FadeIn(fadeDuration);//调用FadeEventSO的FadeIn方法，传入fadeDuration参数
         }
 
-        yield return new WaitForSeconds(fadeDuration);
+        yield return new WaitForSeconds(fadeDuration);//等待fadeDuration秒后再执行下一步操作
 
-        if(currentLoadedScene != null)
+        if (currentLoadedScene != null)
           yield return  currentLoadedScene.sceneReference.UnLoadScene();//等待旧场景卸载完成后再加载新场景
 
         playerTrans.gameObject.SetActive(false);//卸载旧场景后，先把玩家隐藏起来，等新场景加载完成后再显示出来
@@ -98,22 +99,22 @@ public class SceneLoader : MonoBehaviour
 
     private void LoadNewScene()
     {
-       var loadingOption = sceneToLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive,true);
-        loadingOption.Completed += OnLoadCompleted;
+       var loadingOption = sceneToLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive,true);//加载新场景，LoadSceneMode.Additive表示加载新场景时不卸载旧场景，true表示加载完成后激活新场景
+        loadingOption.Completed += OnLoadCompleted;//加载新场景完成后，执行的回调函数
     }
 
-    private void OnLoadCompleted(AsyncOperationHandle<SceneInstance> handle)
+    private void OnLoadCompleted(AsyncOperationHandle<SceneInstance> handle)//加载新场景完成后，执行的回调函数,在上面的方法里被调用
     {
-        currentLoadedScene = sceneToLoad;
+        currentLoadedScene = sceneToLoad;//把当前加载的场景赋值给currentLoadedScene
 
-        playerTrans.position = positionToGo;
+        playerTrans.position = positionToGo;//把玩家的位置设置为传过来的位置
 
-        playerTrans.gameObject.SetActive(true);
-        if (fadeScreen)
+        playerTrans.gameObject.SetActive(true);//把玩家显示出来
+        if (fadeScreen)//
         {
-            //TODO:
+            fadeEventSO.FadeOut(fadeDuration);
         }
-        isLoading = false;
+        isLoading = false;//把isLoading设置为false，表示场景加载完成，可以再次按e键切换场景
         afterSceneLoadEvent.RaiseEvent();//广播场景加载完成事件
     }
 }
