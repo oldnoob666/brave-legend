@@ -12356,6 +12356,7 @@ GameObject:
   - component: {fileID: 1670481007}
   - component: {fileID: 1670481006}
   - component: {fileID: 1670481005}
+  - component: {fileID: 1717000005}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -12447,6 +12448,100 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1717000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1717000004}
+  - component: {fileID: 1717000003}
+  - component: {fileID: 1717000002}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1717000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &1717000002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_PointAction: {fileID: -1378198069613691414, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_MoveAction: {fileID: 6333725817452318490, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_SubmitAction: {fileID: -668109389261093879, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_CancelAction: {fileID: 5994339632926675491, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_LeftClickAction: {fileID: -2898989442729737105, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_MiddleClickAction: {fileID: -623493881753886988, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_RightClickAction: {fileID: 7426505273716934172, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_ScrollWheelAction: {fileID: -903638411736906630, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 2845393336152050827, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 6548037586144195704, guid: f6baf48ea2ec7824d983662a7f285202, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
+--- !u!4 &1717000004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1717000005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670481004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4fe882e9b93534fa63ec12aafd60f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newGameButton: {fileID: 0}
+  continueButton: {fileID: 0}
+  exitButton: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -12455,3 +12550,4 @@ SceneRoots:
   - {fileID: 1139345696}
   - {fileID: 1670481008}
   - {fileID: 1557335331}
+  - {fileID: 1717000004}
