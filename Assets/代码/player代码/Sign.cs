@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Sign : MonoBehaviour
+public class Sign : MonoBehaviour//这是一个挂在玩家身上的脚本，负责玩家与可交互物体的交互
 {
-    public GameObject signSprite;
-    public bool canPress;
+    public GameObject signSprite;//e键
+    public bool canPress;//玩家是否可以按e键
     private Animator anim;
     public Transform playerTrans;
     public PlayerInputControl playerInput;
-    public IInteractable targetItem;
+    public IInteractable targetItem;//玩家当前可以交互的物体
     private void Awake()
     {
         anim = signSprite.GetComponent<Animator>();
@@ -31,15 +31,15 @@ public class Sign : MonoBehaviour
         playerInput.Disable();
     }
 
-    private void OnConfirm(InputAction.CallbackContext context)
+    private void OnConfirm(InputAction.CallbackContext context)//括号里面的参数是玩家按下e键之后传过来的参数
     {
         if (!canPress || targetItem == null)
         {
             return;
         }
 
-        var interaction = targetItem;
-        interaction.TriggerAction();
+        var interaction = targetItem;//获取当前玩家可以交互的物体
+        interaction.TriggerAction();//调用当前物体的交互方法
 
         if (interaction is Component component
             && (!component.gameObject.activeInHierarchy || !component.gameObject.CompareTag("Interactable")))

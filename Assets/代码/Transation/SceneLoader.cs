@@ -12,7 +12,7 @@ public class SceneLoader : MonoBehaviour
     public Vector3 firstplayerTrans;
     [Header("事件监听")]
     public GameSceneSO firstLoadScene;//获取so中第一个场景的内容
-    public SceneLoadEventSO loadEventSO;//获取so中场景加载事件的内容
+    public SceneLoadEventSO loadEventSO;//接收玩家按e键触发的事件，监听到事件后，调用OnLoadRequestEvent方法
 
 
     [Header("广播")]
@@ -74,7 +74,7 @@ public class SceneLoader : MonoBehaviour
     private void NewGame()
     {
         sceneToLoad = firstLoadScene;//把第一个场景赋值给sceneToLoad
-        OnLoadRequestEvent(sceneToLoad, firstplayerTrans, true);//游戏开始时加载第一个场景，并把玩家位置设置为firstplayerTrans
+        OnLoadRequestEvent(sceneToLoad, firstplayerTrans, true);//直接触发OnLoadRequestEvent，游戏开始时加载第一个场景，并把玩家位置设置为firstplayerTrans
     }
 
 
